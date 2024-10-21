@@ -1,18 +1,18 @@
 import { useState } from 'react';
 import './Country.css'
-const Country = ({con}) => {
+const Country = ({con, handel, handelVisitedFlag}) => {
+    const {name, flags, population, area, cca3} = con;
 
     const [visited, setVisited] = useState(false)
 
     const handelVisited = ()=> {
         setVisited(!visited)
     }
+    // console.log(handel);
+    
 
 
-
-
-    console.log(con);
-    const {name, flags, population, area, cca3} = con;
+    // console.log(con);
     return (
         <div className={`box ${visited? 'visited': 'non-visited'}`}>
             <h3 style={{color:visited? 'purple': 'white'}}>Country Name : {name.common} </h3>
@@ -20,6 +20,10 @@ const Country = ({con}) => {
             <p>Population : {population} </p>
             <p>Area : {area} (squre kilometer)</p>
             <p><small>Code: {cca3} </small></p>
+            <button onClick={() => handelVisitedFlag(con.flags.png)}>handelVisitedFlag</button>
+            <br />
+            <button onClick={() => handel(con)}>Mark visited</button>
+            <br />
             <button onClick={handelVisited} >{visited? 'Visited': 'Going'}</button> <br />
             {
                 visited ? 'I have visited this country': 'I want to visite'

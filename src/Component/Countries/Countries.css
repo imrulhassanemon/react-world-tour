@@ -8,3 +8,12 @@
     background-color: rgb(233, 229, 179);
     color: black;
 }
+
+.hei-wig img{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    margin: 5px;
+    /* display: flex; */
+    
+}
