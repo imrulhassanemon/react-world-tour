@@ -46,7 +46,7 @@ const Countries = () => {
 
             <div className="hei-wig">
                 {
-                    VisitedCountriesFlag.map(flg =>  <img key={flg.acc} src={flg}></img> )
+                    VisitedCountriesFlag.map((flg, id) =>  <img key={id} src={flg}></img> )
                 }
             </div>
 
